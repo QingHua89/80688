@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,23 +7,33 @@
     <title>Document</title>
     <style>
         *{
-            margin: 0px;
-            padding: 0px;
+            margin: 0;
         }
         .padre{
-        
-            background-color:aquamarine;
-            margin: 10px;
-            padding: 10px;
+            background-color: orange;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .hijo{
+            background-color: aqua;
+           /* display: inline;*/
+           width: 200px;
+           margin: 10px;
+
+        }
+        img{
+            width: 100%;
         }
     </style>
 </head>
 <body>
     
-    <div class="padre"></div>
-    <div class="padre"></div>
-    <div class="padre"></div>
-    <div class="padre"></div>
-    <div class="padre"></div>
+    <div class="padre">
+        <div class="hijo">01<img src="perr1.png" alt=""></div>
+        <div class="hijo">02<img src="perr2.png" alt=""></div>
+        <div class="hijo">03<img src="perr3.png" alt=""></div>
+        <div class="hijo">04<img src="perr4.png" alt=""></div>
+        <div class="hijo">05<img src="perr3.png" alt=""></div>
+    </div>
 </body>
 </html>
