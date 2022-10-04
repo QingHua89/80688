@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function cambiarColor(color) {
+            console.log("color resivido:", color)
+            var e = document.getElementById("titulo1")
+            e.style.color=color
+        }
+    </script>
+</head>
+<body>
+    <h1 id="titulo1">Este es un titulo 1</h1>
+    <h1 id="titulo2">Este es un titulo 2</h1>
+    <h1 id="titulo3">Este es un titulo 3</h1>
+    <h1 id="titulo4">Este es un titulo 4</h1>
+    <button onclick="cambiarColor('Red')">Rojo</button>
+    <button onclick="cambiarColor('Blue')">Azul</button>
+</body>
+</html>
