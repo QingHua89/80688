@@ -22,6 +22,15 @@
                 
             });
         }
+        /*for(const p in c){
+            c[p].style.color=color
+        }*/
+
+        for (const x in c) {
+            if (Object.hasOwnProperty.call(c,x)) {
+                const element = c[x].style.color=color;
+            }
+        }
         
     </script>
 
@@ -33,6 +42,6 @@
     <h1 id="titulo4">Este es un titulo 4</h1>
     <button onclick="cambiarColor('Red')">Rojo</button>
     <button onclick="cambiarColor('Blue')">Azul</button>
-    <button onclick="cambiarColores('orange')">Naranja</button>
+    <button onclick="cambiarColores('orange')">Todo Naranja</button>
 </body>
 </html>
