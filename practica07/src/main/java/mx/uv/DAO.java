@@ -1,6 +1,7 @@
 package mx.uv;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 //Data Access Object
@@ -21,11 +22,20 @@ public class DAO {
             stm = conn.createStatement();
             rs = stm.executeQuery(sql);
             while (rs.next()){
-                
+                Usuario u = new Usuario(rs.getString("id"), rs.getEstring("nombre"), rs.getString("password"))
             }
         } catch (Exception e){
+            System.out.println("Driver:"+ e);
 
+        } finally{
+            if (rs != null)
+            try {
+                rs.close();
+            } catch (SQLException e) {
+                System.out.println(e);
+            }
         }
-        
+    }
+        return null;
     }
 }
