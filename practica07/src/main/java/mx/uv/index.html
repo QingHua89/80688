@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="">Id:</label>
+        <input type="text" id="id1">
+        <label for="">Nombre:</label>
+        <input type="text" id="id2">
+        <label for="">Password:</label>
+        <input type="text" id="id3">
+        <button type="botton" id="boton">Enviar</button>
+
+    </form>
+    <script>
+        var bEnviar =document.getElementById("boton");
+        bEnviar.addEventListener("click",function(){
+            let id = document.getElementById("id1").value
+            let nombre=document.getElementById("ide2").value
+            let Password=document.getElementById("id3").value
+            console.log(ide+""+nombre+""+Password)
+            axios.post("https://localhost",{
+                id: id,
+                nombre: nombre,
+                password: password
+            })
+                .then(function(response){
+                    console.log(response);
+                })
+                .catch(function(error){
+                    console.log(error);
+                });
+        })
+    </script>
+</body>
+</html>

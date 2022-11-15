@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="ejemplo"></h1>
+    <form action="" method="">
+        <input type="text" id="login" placeholder="usuario">
+        <input type="password" id="password" placeholder="contraseña">
+        <button type="button" id="entrar">entrar</button>
+    </form>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        var bLogin = document.getElementById("entrar")
+        bLogin.addEventListener("click", function () {
+            let l = document.getElementById("login").value
+            let p = document.getElementById("password").value
+            let q = new URLSearchParams()
+            q.append("login", l)
+            q.append("password", p)
+            // alert( l + " " + p);
+            // alert( q );
+            // axios.post("http://localhost:4567", q)
+            axios.post("http://localhost:4567", {
+                login: l,
+                password: p
+            })
+            .then (function (res) {
+                // console.log(res)
+                // alert (res.data.msj + " " + res.data.usuario)
+                document.getElementById("ejemplo").innerHTML = res.data.msj + " " + res.data.usuario
+            })
+            .catch(function (error) {
+                console.log(error)
+            })
+        })
+    </script>
+</body>
+
+</html>
