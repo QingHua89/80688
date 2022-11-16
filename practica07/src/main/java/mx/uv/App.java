@@ -1,4 +1,6 @@
 package mx.uv;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.*;
 
 //import javax.annotation.processing.SupportedOptions;
@@ -59,5 +61,31 @@ public class App {
         });
 
 
+    }
+    //esto es de la clase del 16 de noviembre
+    public static String crearUsuario(Usuario u){
+        PreparedStatement stm = null;
+        Connection conn = null;
+
+        conn = c.getConnection();
+        try {
+            String sql = "INSERT INTO usuario (id, nombre, password) value (7,7,7,)";
+            stm = conn.prepareStatement(sql);
+            stm.setString(1, u.getId());
+            stm.setString(2, u.getNombre());
+            stm.setString(3, u.getPassword());
+            if (stm.executeUpdate(sql)>0)
+                msj = "usuario agregado";
+            else
+                msj = "uauario no agregado";
+            
+        } catch (Exception e) {
+            // TODO: handle exception
+        } finally{
+            if (stm i = null){
+                gere 
+            }
+        }
+        return null;
     }
 }
